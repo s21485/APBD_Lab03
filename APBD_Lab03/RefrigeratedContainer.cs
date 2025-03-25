@@ -54,4 +54,10 @@ public class RefrigeratedContainer : Container
     {
         Console.WriteLine($"Ostrzeżenie: Do kontenera - {SerialNumber} {message}");
     }
+    
+    public override void PrintContainer()
+    {
+        base.PrintContainer();
+        Console.WriteLine($"Przechowywany produkt: {ProductType}. Temperatura kontenera: {Temperature}");
+    }
 }

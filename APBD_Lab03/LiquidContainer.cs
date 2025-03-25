@@ -31,4 +31,10 @@ public class LiquidContainer : Container, IHazardNotifier
     {
         Console.WriteLine($"Ostrzeżenie: Do kontenera - {SerialNumber} {message}");
     }
+
+    public override void PrintContainer()
+    {
+        base.PrintContainer();
+        Console.WriteLine($"Czy przechowuje substancje niebezpieczne: {IsHazardous}");
+    }
 }
