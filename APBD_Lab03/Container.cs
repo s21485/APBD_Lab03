@@ -2,20 +2,25 @@
 
 public abstract class Container
 {
-    public double LoadWeight; // w kilogramach
+    public double CurrentLoadWeight; // w kilogramach
     public double Height; // w centymetrach
     public double ContainerWeight; // w kilogramach
     public double Depth; // w centymetrach
-    public SerialNumber SerialNumber;
+    public string SerialNumber;
     public double MaxLoad;
 
-    public abstract void Unload();
-    public abstract void Load(double weight);
+    public Container(string type, int id, double maxLoad, double height, double depth, double containerWeight)
+    {
+        SerialNumber = $"KON-{type}-{id}";
+        MaxLoad = maxLoad;
+        Height = height;
+        Depth = depth;
+        ContainerWeight = containerWeight;
+        CurrentLoadWeight = 0;
 
-}
+    }
 
-public class SerialNumber
-{
-    public string ContainerType;
-    public int Number;
+    public abstract void Unload(); // wyładowanie kontenera
+    public abstract void Load(double weight); // załadowanie kontenera
+
 }
